@@ -90,7 +90,6 @@ namespace math
     * @param x：uint64_t型別。表示斐波那契數列的索引。
     * @return uint64_t，斐波那契數列的第n項。  
     * 
-    * 
     * 你也可以选択使用fib_fast(n)，他更快一点。
     * @see fib_fast
     */

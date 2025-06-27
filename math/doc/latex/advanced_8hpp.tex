@@ -1,0 +1,53 @@
+\doxysection{advanced.\+hpp 檔案參考文件}
+\hypertarget{advanced_8hpp}{}\label{advanced_8hpp}\index{advanced.hpp@{advanced.hpp}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{命名空間(Namespaces)}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacemath}{math}}
+\begin{DoxyCompactList}\small\item\em 進階數學函式庫 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{advanced_8hpp_a6593ffff7c123080d49ecc7c9d090a5b}{DEEPSLEEPV3\+\_\+\+ADVANCED\+\_\+\+MATH\+\_\+\+HEADER}}
+\item 
+\#define \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}~\+\_\+\+\_\+declspec(dllexport)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{型態定義}
+\begin{DoxyCompactItemize}
+\item 
+typedef vector$<$ vector$<$ int64\+\_\+t $>$ $>$ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{math\+::\+Matrix}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{函式}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} \mbox{\hyperlink{namespacemath_aa6054424ff3a2058957b23c8c420157b}{math\+::matrix\+Multiply}} (const \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} \&a, const \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} \&b)
+\item 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} \mbox{\hyperlink{namespacemath_a8b98283ef4a98964a91ac02ccdbff04a}{math\+::matrix\+Power}} (\mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} mat, int64\+\_\+t power)
+\item 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} uint64\+\_\+t \mbox{\hyperlink{namespacemath_a7c914e02e75f22575538469c233c0407}{math\+::fib\+\_\+matrix}} (uint64\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em 使用矩陣快速冪計算斐波那契數列，\+O(log n) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} uint64\+\_\+t \mbox{\hyperlink{namespacemath_af9881be0f446319796605214c0386ece}{math\+::fib\+\_\+fast}} (uint64\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em 斐波那契數列，时间复杂度：\+O(\+N) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} uint64\+\_\+t \mbox{\hyperlink{namespacemath_acb18618e2921300bb29c6c53e29330a2}{math\+::fib}} (uint64\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em 斐波那契數列，时间复杂度：\+O(2\texorpdfstring{$^\wedge$}{\string^}n) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{advanced_8hpp_doc-define-members}
+\doxysubsection{定義巨集說明文件}
+\Hypertarget{advanced_8hpp_a6593ffff7c123080d49ecc7c9d090a5b}\index{advanced.hpp@{advanced.hpp}!DEEPSLEEPV3\_ADVANCED\_MATH\_HEADER@{DEEPSLEEPV3\_ADVANCED\_MATH\_HEADER}}
+\index{DEEPSLEEPV3\_ADVANCED\_MATH\_HEADER@{DEEPSLEEPV3\_ADVANCED\_MATH\_HEADER}!advanced.hpp@{advanced.hpp}}
+\doxysubsubsection{\texorpdfstring{DEEPSLEEPV3\_ADVANCED\_MATH\_HEADER}{DEEPSLEEPV3\_ADVANCED\_MATH\_HEADER}}
+{\footnotesize\ttfamily \label{advanced_8hpp_a6593ffff7c123080d49ecc7c9d090a5b} 
+\#define DEEPSLEEPV3\+\_\+\+ADVANCED\+\_\+\+MATH\+\_\+\+HEADER}
+
+\Hypertarget{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}\index{advanced.hpp@{advanced.hpp}!DLLEXPORT@{DLLEXPORT}}
+\index{DLLEXPORT@{DLLEXPORT}!advanced.hpp@{advanced.hpp}}
+\doxysubsubsection{\texorpdfstring{DLLEXPORT}{DLLEXPORT}}
+{\footnotesize\ttfamily \label{advanced_8hpp_a808e08638be3cba36e36759e5b150de0} 
+\#define DLLEXPORT~\+\_\+\+\_\+declspec(dllexport)}
+

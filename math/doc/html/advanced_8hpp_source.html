@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hant">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>math: advanced.hpp 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">math<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('advanced_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">載入中...</div>
+<div class="SRStatus" id="Searching">搜尋中...</div>
+<div class="SRStatus" id="NoMatches">無符合項目</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">advanced.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="advanced_8hpp.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef DEEPSLEEPV3_ADVANCED_MATH_HEADER</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="advanced_8hpp.html#a6593ffff7c123080d49ecc7c9d090a5b">    4</a></span><span class="preprocessor">#define DEEPSLEEPV3_ADVANCED_MATH_HEADER</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="advanced_8hpp.html#a808e08638be3cba36e36759e5b150de0">    5</a></span><span class="preprocessor">#define DLLEXPORT __declspec(dllexport)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespacemath.html">   17</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemath.html">math</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">   19</a></span>    <span class="keyword">typedef</span> vector&lt;vector&lt;int64_t&gt;&gt; <a class="code hl_typedef" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">Matrix</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespacemath.html#aa6054424ff3a2058957b23c8c420157b">   21</a></span>    <a class="code hl_define" href="advanced_8hpp.html#a808e08638be3cba36e36759e5b150de0">DLLEXPORT</a> <a class="code hl_typedef" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">Matrix</a> <a class="code hl_function" href="namespacemath.html#aa6054424ff3a2058957b23c8c420157b">matrixMultiply</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">Matrix</a>&amp; a, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">Matrix</a>&amp; b) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">int</span> n = a.size();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">int</span> m = b[0].size();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">int</span> k = a[0].size();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_typedef" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">Matrix</a> res(n, vector&lt;long long&gt;(m, 0));</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; m; ++j) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> p = 0; p &lt; k; ++p) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                    res[i][j] += a[i][p] * b[p][j];</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespacemath.html#a8b98283ef4a98964a91ac02ccdbff04a">   37</a></span>    <a class="code hl_define" href="advanced_8hpp.html#a808e08638be3cba36e36759e5b150de0">DLLEXPORT</a> <a class="code hl_typedef" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">Matrix</a> <a class="code hl_function" href="namespacemath.html#a8b98283ef4a98964a91ac02ccdbff04a">matrixPower</a>(<a class="code hl_typedef" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">Matrix</a> mat, int64_t power) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">int</span> n = mat.size();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_typedef" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">Matrix</a> result(n, vector&lt;long long&gt;(n, 0));</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            result[i][i] = 1;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">while</span> (power &gt; 0) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">if</span> (power % 2 == 1) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                result = <a class="code hl_function" href="namespacemath.html#aa6054424ff3a2058957b23c8c420157b">matrixMultiply</a>(result, mat);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            mat = <a class="code hl_function" href="namespacemath.html#aa6054424ff3a2058957b23c8c420157b">matrixMultiply</a>(mat, mat);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            power /= 2;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespacemath.html#a7c914e02e75f22575538469c233c0407">   59</a></span>    <a class="code hl_define" href="advanced_8hpp.html#a808e08638be3cba36e36759e5b150de0">DLLEXPORT</a> uint64_t <a class="code hl_function" href="namespacemath.html#a7c914e02e75f22575538469c233c0407">fib_matrix</a>(uint64_t n) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span> (n == 0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (n == 1) <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_typedef" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">Matrix</a> mat = { {1, 1}, {1, 0} };</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_typedef" href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">Matrix</a> result = <a class="code hl_function" href="namespacemath.html#a8b98283ef4a98964a91ac02ccdbff04a">matrixPower</a>(mat, n - 1);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">return</span> result[0][0];</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="namespacemath.html#af9881be0f446319796605214c0386ece">   75</a></span>    <a class="code hl_define" href="advanced_8hpp.html#a808e08638be3cba36e36759e5b150de0">DLLEXPORT</a> uint64_t <a class="code hl_function" href="namespacemath.html#af9881be0f446319796605214c0386ece">fib_fast</a>(uint64_t n) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span> (n == 0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">if</span> (n == 1) <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">if</span> (n &gt;= 1e6) <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemath.html#a7c914e02e75f22575538469c233c0407">fib_matrix</a>(n);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        uint64_t a = 0, b = 1;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            uint64_t temp = b;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            b = a + b;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            a = temp;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">return</span> a;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="namespacemath.html#acb18618e2921300bb29c6c53e29330a2">   96</a></span>    <a class="code hl_define" href="advanced_8hpp.html#a808e08638be3cba36e36759e5b150de0">DLLEXPORT</a> uint64_t <a class="code hl_function" href="namespacemath.html#acb18618e2921300bb29c6c53e29330a2">fib</a>(uint64_t n) { <span class="comment">// 負數不在斐波那契數列中      </span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">if</span> (n &gt; 40) <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemath.html#af9881be0f446319796605214c0386ece">fib_fast</a>(n); <span class="comment">// 超過40項使用快速算法，避免太慢</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">if</span> (n &lt;= 1) <span class="keywordflow">return</span> n;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemath.html#acb18618e2921300bb29c6c53e29330a2">fib</a>(n - 1) + <a class="code hl_function" href="namespacemath.html#acb18618e2921300bb29c6c53e29330a2">fib</a>(n - 2);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aadvanced_8hpp_html_a808e08638be3cba36e36759e5b150de0"><div class="ttname"><a href="advanced_8hpp.html#a808e08638be3cba36e36759e5b150de0">DLLEXPORT</a></div><div class="ttdeci">#define DLLEXPORT</div><div class="ttdef"><b>Definition</b> advanced.hpp:5</div></div>
+<div class="ttc" id="anamespacemath_html"><div class="ttname"><a href="namespacemath.html">math</a></div><div class="ttdoc">進階數學函式庫</div><div class="ttdef"><b>Definition</b> advanced.hpp:18</div></div>
+<div class="ttc" id="anamespacemath_html_a7c914e02e75f22575538469c233c0407"><div class="ttname"><a href="namespacemath.html#a7c914e02e75f22575538469c233c0407">math::fib_matrix</a></div><div class="ttdeci">DLLEXPORT uint64_t fib_matrix(uint64_t n)</div><div class="ttdoc">使用矩陣快速冪計算斐波那契數列，O(log n)</div><div class="ttdef"><b>Definition</b> advanced.hpp:59</div></div>
+<div class="ttc" id="anamespacemath_html_a8b98283ef4a98964a91ac02ccdbff04a"><div class="ttname"><a href="namespacemath.html#a8b98283ef4a98964a91ac02ccdbff04a">math::matrixPower</a></div><div class="ttdeci">DLLEXPORT Matrix matrixPower(Matrix mat, int64_t power)</div><div class="ttdef"><b>Definition</b> advanced.hpp:37</div></div>
+<div class="ttc" id="anamespacemath_html_aa6054424ff3a2058957b23c8c420157b"><div class="ttname"><a href="namespacemath.html#aa6054424ff3a2058957b23c8c420157b">math::matrixMultiply</a></div><div class="ttdeci">DLLEXPORT Matrix matrixMultiply(const Matrix &amp;a, const Matrix &amp;b)</div><div class="ttdef"><b>Definition</b> advanced.hpp:21</div></div>
+<div class="ttc" id="anamespacemath_html_aa9562fd8ad4fbe8587112442bc13b5cb"><div class="ttname"><a href="namespacemath.html#aa9562fd8ad4fbe8587112442bc13b5cb">math::Matrix</a></div><div class="ttdeci">vector&lt; vector&lt; int64_t &gt; &gt; Matrix</div><div class="ttdef"><b>Definition</b> advanced.hpp:19</div></div>
+<div class="ttc" id="anamespacemath_html_acb18618e2921300bb29c6c53e29330a2"><div class="ttname"><a href="namespacemath.html#acb18618e2921300bb29c6c53e29330a2">math::fib</a></div><div class="ttdeci">DLLEXPORT uint64_t fib(uint64_t n)</div><div class="ttdoc">斐波那契數列，时间复杂度：O(2^n)</div><div class="ttdef"><b>Definition</b> advanced.hpp:96</div></div>
+<div class="ttc" id="anamespacemath_html_af9881be0f446319796605214c0386ece"><div class="ttname"><a href="namespacemath.html#af9881be0f446319796605214c0386ece">math::fib_fast</a></div><div class="ttdeci">DLLEXPORT uint64_t fib_fast(uint64_t n)</div><div class="ttdoc">斐波那契數列，时间复杂度：O(N)</div><div class="ttdef"><b>Definition</b> advanced.hpp:75</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="advanced_8hpp.html">advanced.hpp</a></li>
+    <li class="footer">產生者: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

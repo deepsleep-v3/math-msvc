@@ -1,0 +1,120 @@
+\doxysection{math 命名空間(Namespace)參考文件}
+\hypertarget{namespacemath}{}\label{namespacemath}\index{math@{math}}
+
+
+進階數學函式庫  
+
+
+\doxysubsubsection*{型態定義}
+\begin{DoxyCompactItemize}
+\item 
+typedef vector$<$ vector$<$ int64\+\_\+t $>$ $>$ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{函式}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} \mbox{\hyperlink{namespacemath_aa6054424ff3a2058957b23c8c420157b}{matrix\+Multiply}} (const \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} \&a, const \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} \&b)
+\item 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} \mbox{\hyperlink{namespacemath_a8b98283ef4a98964a91ac02ccdbff04a}{matrix\+Power}} (\mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} mat, int64\+\_\+t power)
+\item 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} uint64\+\_\+t \mbox{\hyperlink{namespacemath_a7c914e02e75f22575538469c233c0407}{fib\+\_\+matrix}} (uint64\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em 使用矩陣快速冪計算斐波那契數列，\+O(log n) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} uint64\+\_\+t \mbox{\hyperlink{namespacemath_af9881be0f446319796605214c0386ece}{fib\+\_\+fast}} (uint64\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em 斐波那契數列，时间复杂度：\+O(\+N) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} uint64\+\_\+t \mbox{\hyperlink{namespacemath_acb18618e2921300bb29c6c53e29330a2}{fib}} (uint64\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em 斐波那契數列，时间复杂度：\+O(2\texorpdfstring{$^\wedge$}{\string^}n) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳細描述}
+進階數學函式庫 
+
+高等數學函式 包含矩陣乘法、矩陣快速冪、斐波那契數列等 
+
+\label{doc-typedef-members}
+\Hypertarget{namespacemath_doc-typedef-members}
+\doxysubsection{型態定義說明文件}
+\Hypertarget{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}\index{math@{math}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!math@{math}}
+\doxysubsubsection{\texorpdfstring{Matrix}{Matrix}}
+{\footnotesize\ttfamily \label{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb} 
+typedef vector$<$vector$<$int64\+\_\+t$>$ $>$ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{math\+::\+Matrix}}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{namespacemath_doc-func-members}
+\doxysubsection{函式說明文件}
+\Hypertarget{namespacemath_acb18618e2921300bb29c6c53e29330a2}\index{math@{math}!fib@{fib}}
+\index{fib@{fib}!math@{math}}
+\doxysubsubsection{\texorpdfstring{fib()}{fib()}}
+{\footnotesize\ttfamily \label{namespacemath_acb18618e2921300bb29c6c53e29330a2} 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} uint64\+\_\+t math\+::fib (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+
+
+斐波那契數列，时间复杂度：\+O(2\texorpdfstring{$^\wedge$}{\string^}n) 
+
+
+\begin{DoxyParams}{參數}
+{\em x：uint64\+\_\+t型別。表示斐波那契數列的索引。} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{傳回值}
+uint64\+\_\+t，斐波那契數列的第n項。 ~\newline
+
+\end{DoxyReturn}
+你也可以选択使用fib\+\_\+fast(n)，他更快一点。 \begin{DoxySeeAlso}{參閱}
+\doxylink{namespacemath_af9881be0f446319796605214c0386ece}{fib\+\_\+fast} 
+\end{DoxySeeAlso}
+\Hypertarget{namespacemath_af9881be0f446319796605214c0386ece}\index{math@{math}!fib\_fast@{fib\_fast}}
+\index{fib\_fast@{fib\_fast}!math@{math}}
+\doxysubsubsection{\texorpdfstring{fib\_fast()}{fib\_fast()}}
+{\footnotesize\ttfamily \label{namespacemath_af9881be0f446319796605214c0386ece} 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} uint64\+\_\+t math\+::fib\+\_\+fast (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+
+
+斐波那契數列，时间复杂度：\+O(\+N) 
+
+
+\begin{DoxyParams}{參數}
+{\em x：uint64\+\_\+t型別。表示斐波那契數列的索引。} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{傳回值}
+uint64\+\_\+t，斐波那契數列的第n項。 ~\newline
+
+\end{DoxyReturn}
+你也可以选択使用fib\+\_\+matrix(n)，他更快一点。 \begin{DoxySeeAlso}{參閱}
+\doxylink{namespacemath_a7c914e02e75f22575538469c233c0407}{fib\+\_\+matrix} 
+\end{DoxySeeAlso}
+\Hypertarget{namespacemath_a7c914e02e75f22575538469c233c0407}\index{math@{math}!fib\_matrix@{fib\_matrix}}
+\index{fib\_matrix@{fib\_matrix}!math@{math}}
+\doxysubsubsection{\texorpdfstring{fib\_matrix()}{fib\_matrix()}}
+{\footnotesize\ttfamily \label{namespacemath_a7c914e02e75f22575538469c233c0407} 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} uint64\+\_\+t math\+::fib\+\_\+matrix (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+
+
+使用矩陣快速冪計算斐波那契數列，\+O(log n) 
+
+
+\begin{DoxyParams}{參數}
+{\em x：uint64\+\_\+t型別。表示斐波那契數列的索引。} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{傳回值}
+uint64\+\_\+t，斐波那契數列的第n項。 
+\end{DoxyReturn}
+\Hypertarget{namespacemath_aa6054424ff3a2058957b23c8c420157b}\index{math@{math}!matrixMultiply@{matrixMultiply}}
+\index{matrixMultiply@{matrixMultiply}!math@{math}}
+\doxysubsubsection{\texorpdfstring{matrixMultiply()}{matrixMultiply()}}
+{\footnotesize\ttfamily \label{namespacemath_aa6054424ff3a2058957b23c8c420157b} 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} math\+::matrix\+Multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} \&}]{a}{, }\item[{const \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} \&}]{b}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemath_a8b98283ef4a98964a91ac02ccdbff04a}\index{math@{math}!matrixPower@{matrixPower}}
+\index{matrixPower@{matrixPower}!math@{math}}
+\doxysubsubsection{\texorpdfstring{matrixPower()}{matrixPower()}}
+{\footnotesize\ttfamily \label{namespacemath_a8b98283ef4a98964a91ac02ccdbff04a} 
+\mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}} \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}} math\+::matrix\+Power (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}}]{mat}{, }\item[{int64\+\_\+t}]{power}{}\end{DoxyParamCaption})}
+

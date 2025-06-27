@@ -9,12 +9,13 @@
 #include <vector>
 using namespace std;
 
+/** 
+* @brief 進階數學函式庫
+* 
+* 高等數學函式
+* 包含矩陣乘法、矩陣快速冪、斐波那契數列等 */
 namespace math
 {
-    // 進階數學函式庫
-    // 高等數學函式
-    // 包含矩陣乘法、矩陣快速冪、斐波那契數列等
-
     typedef vector<vector<int64_t>> Matrix;
 
     DLLEXPORT Matrix matrixMultiply(const Matrix& a, const Matrix& b) {
@@ -36,7 +37,6 @@ namespace math
     DLLEXPORT Matrix matrixPower(Matrix mat, int64_t power) {
         int n = mat.size();
         Matrix result(n, vector<long long>(n, 0));
-        // 初始化为单位矩阵
         for (int i = 0; i < n; ++i) {
             result[i][i] = 1;
         }
@@ -51,7 +51,11 @@ namespace math
         return result;
     }
 
-    // 使用矩陣快速冪計算斐波那契數列，O(log n)
+    /**
+    * @brief 使用矩陣快速冪計算斐波那契數列，O(log n)
+    * @param x：uint64_t型別。表示斐波那契數列的索引。
+    * @return uint64_t，斐波那契數列的第n項。
+    */
     DLLEXPORT uint64_t fib_matrix(uint64_t n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
@@ -60,7 +64,14 @@ namespace math
         return result[0][0];
     }
 
-    // 斐波那契數列，时间复杂度：O(N)
+    /**
+    * @brief 斐波那契數列，时间复杂度：O(N)
+    * @param x：uint64_t型別。表示斐波那契數列的索引。
+    * @return uint64_t，斐波那契數列的第n項。  
+    * 
+    * 你也可以选択使用fib_matrix(n)，他更快一点。
+    * @see fib_matrix
+    */
     DLLEXPORT uint64_t fib_fast(uint64_t n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
@@ -74,11 +85,21 @@ namespace math
         return a;
     }
 
-    // 斐波那契數列，时间复杂度：O(2ⁿ)
-    DLLEXPORT uint64_t fib(uint64_t n) { // 負數不在斐波那契數列中
+    /**
+    * @brief 斐波那契數列，时间复杂度：O(2^n)
+    * @param x：uint64_t型別。表示斐波那契數列的索引。
+    * @return uint64_t，斐波那契數列的第n項。  
+    * 
+    * 
+    * 你也可以选択使用fib_fast(n)，他更快一点。
+    * @see fib_fast
+    */
+    DLLEXPORT uint64_t fib(uint64_t n) { // 負數不在斐波那契數列中      
         if (n > 40) return fib_fast(n); // 超過40項使用快速算法，避免太慢
         if (n <= 1) return n;
         return fib(n - 1) + fib(n - 2);
     }
+
+
 }
 #endif

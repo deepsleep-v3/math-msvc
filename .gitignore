@@ -407,3 +407,6 @@ FodyWeavers.xsd
 
 # macOS
 .DS_Store
+
+# WebStorm
+.idea/

@@ -10,7 +10,7 @@ PROJECT_LOGO           =
 
 PROJECT_ICON           =
 
-OUTPUT_DIRECTORY       = doc/
+OUTPUT_DIRECTORY       = ../docs/api
 
 CREATE_SUBDIRS         = NO
 

@@ -4,3 +4,6 @@
     color: teal;
     content: ">"
 }
+.breadcrumb {
+    background-color: rgb(158, 189, 25);
+}

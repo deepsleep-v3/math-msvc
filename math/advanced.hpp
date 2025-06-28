@@ -13,7 +13,9 @@ using namespace std;
 * @brief 進階數學函式庫
 * 
 * 高等數學函式
-* 包含矩陣乘法、矩陣快速冪、斐波那契數列等 */
+* 包含矩陣乘法、矩陣快速冪、斐波那契數列等
+* @author deepsleep-v3
+*/
 namespace math
 {
     typedef vector<vector<int64_t>> Matrix;
@@ -55,6 +57,7 @@ namespace math
     * @brief 使用矩陣快速冪計算斐波那契數列，O(log n)
     * @param x：uint64_t型別。表示斐波那契數列的索引。
     * @return uint64_t，斐波那契數列的第n項。
+    * @author deepsleep-v3
     */
     DLLEXPORT uint64_t fib_matrix(uint64_t n) {
         if (n == 0) return 0;
@@ -71,6 +74,7 @@ namespace math
     * 
     * 你也可以选択使用fib_matrix(n)，他更快一点。
     * @see fib_matrix
+    * @author deepsleep-v3
     */
     DLLEXPORT uint64_t fib_fast(uint64_t n) {
         if (n == 0) return 0;
@@ -92,13 +96,12 @@ namespace math
     * 
     * 你也可以选択使用fib_fast(n)，他更快一点。
     * @see fib_fast
+    * @author deepsleep-v3
     */
     DLLEXPORT uint64_t fib(uint64_t n) { // 負數不在斐波那契數列中      
         if (n > 40) return fib_fast(n); // 超過40項使用快速算法，避免太慢
         if (n <= 1) return n;
         return fib(n - 1) + fib(n - 2);
     }
-
-
 }
 #endif

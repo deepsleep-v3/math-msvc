@@ -12,72 +12,70 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00010\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacemath}{math}}}
-\DoxyCodeLine{00018\ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{typedef}\ vector<vector<int64\_t>>\ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}};}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}\ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ \mbox{\hyperlink{namespacemath_aa6054424ff3a2058957b23c8c420157b}{matrixMultiply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\&\ b)\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ a.size();}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\ =\ b[0].size();}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ a[0].size();}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ res(n,\ vector<long\ long>(m,\ 0));}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ m;\ ++j)\ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ p\ =\ 0;\ p\ <\ k;\ ++p)\ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res[i][j]\ +=\ a[i][p]\ *\ b[p][j];}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
-\DoxyCodeLine{00035\ \ \ \ \ \}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}\ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ \mbox{\hyperlink{namespacemath_a8b98283ef4a98964a91ac02ccdbff04a}{matrixPower}}(\mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ mat,\ int64\_t\ power)\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ mat.size();}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ result(n,\ vector<long\ long>(n,\ 0));}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ result[i][i]\ =\ 1;}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (power\ >\ 0)\ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (power\ \%\ 2\ ==\ 1)\ \{}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ \mbox{\hyperlink{namespacemath_aa6054424ff3a2058957b23c8c420157b}{matrixMultiply}}(result,\ mat);}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ mat\ =\ \mbox{\hyperlink{namespacemath_aa6054424ff3a2058957b23c8c420157b}{matrixMultiply}}(mat,\ mat);}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ power\ /=\ 2;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
-\DoxyCodeLine{00052\ \ \ \ \ \}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}\ uint64\_t\ \mbox{\hyperlink{namespacemath_a7c914e02e75f22575538469c233c0407}{fib\_matrix}}(uint64\_t\ n)\ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 1)\ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ mat\ =\ \{\ \{1,\ 1\},\ \{1,\ 0\}\ \};}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ result\ =\ \mbox{\hyperlink{namespacemath_a8b98283ef4a98964a91ac02ccdbff04a}{matrixPower}}(mat,\ n\ -\/\ 1);}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result[0][0];}
-\DoxyCodeLine{00065\ \ \ \ \ \}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}\ uint64\_t\ \mbox{\hyperlink{namespacemath_af9881be0f446319796605214c0386ece}{fib\_fast}}(uint64\_t\ n)\ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 1)\ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 1e6)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacemath_a7c914e02e75f22575538469c233c0407}{fib\_matrix}}(n);}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ uint64\_t\ a\ =\ 0,\ b\ =\ 1;}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint64\_t\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ temp\ =\ b;}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ a\ +\ b;}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ temp;}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
-\DoxyCodeLine{00086\ \ \ \ \ \}}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}\ uint64\_t\ \mbox{\hyperlink{namespacemath_acb18618e2921300bb29c6c53e29330a2}{fib}}(uint64\_t\ n)\ \{\ \textcolor{comment}{//\ 負數不在斐波那契數列中\ \ \ \ \ \ }}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >\ 40)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacemath_af9881be0f446319796605214c0386ece}{fib\_fast}}(n);\ \textcolor{comment}{//\ 超過40項使用快速算法，避免太慢}}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ <=\ 1)\ \textcolor{keywordflow}{return}\ n;}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacemath_acb18618e2921300bb29c6c53e29330a2}{fib}}(n\ -\/\ 1)\ +\ \mbox{\hyperlink{namespacemath_acb18618e2921300bb29c6c53e29330a2}{fib}}(n\ -\/\ 2);}
-\DoxyCodeLine{00100\ \ \ \ \ \}}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \}}
-\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacemath}{math}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{typedef}\ vector<vector<int64\_t>>\ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}\ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ \mbox{\hyperlink{namespacemath_aa6054424ff3a2058957b23c8c420157b}{matrixMultiply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\&\ b)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ a.size();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\ =\ b[0].size();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ a[0].size();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ res(n,\ vector<long\ long>(m,\ 0));}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ m;\ ++j)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ p\ =\ 0;\ p\ <\ k;\ ++p)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res[i][j]\ +=\ a[i][p]\ *\ b[p][j];}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}\ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ \mbox{\hyperlink{namespacemath_a8b98283ef4a98964a91ac02ccdbff04a}{matrixPower}}(\mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ mat,\ int64\_t\ power)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ mat.size();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ result(n,\ vector<long\ long>(n,\ 0));}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ result[i][i]\ =\ 1;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (power\ >\ 0)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (power\ \%\ 2\ ==\ 1)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ \mbox{\hyperlink{namespacemath_aa6054424ff3a2058957b23c8c420157b}{matrixMultiply}}(result,\ mat);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ mat\ =\ \mbox{\hyperlink{namespacemath_aa6054424ff3a2058957b23c8c420157b}{matrixMultiply}}(mat,\ mat);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ power\ /=\ 2;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}\ uint64\_t\ \mbox{\hyperlink{namespacemath_a7c914e02e75f22575538469c233c0407}{fib\_matrix}}(uint64\_t\ n)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 1)\ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ mat\ =\ \{\ \{1,\ 1\},\ \{1,\ 0\}\ \};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemath_aa9562fd8ad4fbe8587112442bc13b5cb}{Matrix}}\ result\ =\ \mbox{\hyperlink{namespacemath_a8b98283ef4a98964a91ac02ccdbff04a}{matrixPower}}(mat,\ n\ -\/\ 1);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result[0][0];}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}\ uint64\_t\ \mbox{\hyperlink{namespacemath_af9881be0f446319796605214c0386ece}{fib\_fast}}(uint64\_t\ n)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 1)\ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >=\ 1e6)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacemath_a7c914e02e75f22575538469c233c0407}{fib\_matrix}}(n);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ uint64\_t\ a\ =\ 0,\ b\ =\ 1;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint64\_t\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ temp\ =\ b;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ a\ +\ b;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ temp;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{advanced_8hpp_a808e08638be3cba36e36759e5b150de0}{DLLEXPORT}}\ uint64\_t\ \mbox{\hyperlink{namespacemath_acb18618e2921300bb29c6c53e29330a2}{fib}}(uint64\_t\ n)\ \{\ \textcolor{comment}{//\ 負數不在斐波那契數列中\ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >\ 40)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacemath_af9881be0f446319796605214c0386ece}{fib\_fast}}(n);\ \textcolor{comment}{//\ 超過40項使用快速算法，避免太慢}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ <=\ 1)\ \textcolor{keywordflow}{return}\ n;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacemath_acb18618e2921300bb29c6c53e29330a2}{fib}}(n\ -\/\ 1)\ +\ \mbox{\hyperlink{namespacemath_acb18618e2921300bb29c6c53e29330a2}{fib}}(n\ -\/\ 2);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

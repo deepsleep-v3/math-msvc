@@ -1,0 +1,4 @@
+﻿.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    margin-left: 10px;
+}

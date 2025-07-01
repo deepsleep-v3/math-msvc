@@ -1,0 +1,32 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://deepsleep-v3.github.io/math-msvc/life-cycle"
+           xmlns="https://deepsleep-v3.github.io/math-msvc/life-cycle"
+		   elementFormDefault="qualified">
+	<xs:element name="versions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="release" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="version" type="xs:string"/>
+							<xs:element name="release-date" type="xs:date"/>
+							<xs:element name="eos-date" type="xs:date"/>
+							<xs:element name="is-lts" type="xs:boolean"/>
+						</xs:sequence>
+						<xs:attribute name="channel" use="required" type="channels"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="latest-version" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="channels">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="alpha"/>
+			<xs:enumeration value="beta"/>
+			<xs:enumeration value="rc"/>
+			<xs:enumeration value="stable"/>
+			<xs:enumeration value="canary"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<versions xmlns="https://deepsleep-v3.github.io/math-msvc/life-cycle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://deepsleep-v3.github.io/math-msvc/life-cycle life-cycle.xsd">
+	<release channel="beta">
+		<version>0.1.0.0</version>
+		<release-date>2025-06-27</release-date>
+		<eos-date>2026-01-01</eos-date>
+		<is-lts>false</is-lts>
+	</release>
+	<latest-version>0.1.0.0</latest-version>
+</versions>

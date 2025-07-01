@@ -3,11 +3,15 @@
 #ifndef DEEPSLEEPV3_ADVANCED_MATH_HEADER
 #define DEEPSLEEPV3_ADVANCED_MATH_HEADER
 #define DLLEXPORT __declspec(dllexport)
+#define CURRENT_VERSION "0.1.0.0"
 #include <cstdint>
 #include <stdexcept>
 #include <iostream>
 #include <vector>
+#include "pugixml.hpp"
+#include "download_api.hpp"
 using namespace std;
+using namespace pugi;
 
 /** 
 * @brief 進階數學函式庫
@@ -102,6 +106,33 @@ namespace math
         if (n > 40) return fib_fast(n); // 超過40項使用快速算法，避免太慢
         if (n <= 1) return n;
         return fib(n - 1) + fib(n - 2);
+    }
+
+    namespace update_tools {
+        /**
+        * @brief 檢查是否為最新版本。
+        * @return 當前版本是否為最新版本。
+        * @author deepsleep-v3
+        */
+        DLLEXPORT bool check_update() {
+            string _ = "";
+            cout << "Checking update…" << endl;
+            wchar_t buffer[MAX_PATH];
+            DWORD length = GetTempPathW(MAX_PATH, buffer);
+            wstring tempPath = wstring(buffer, length);
+            wstring actualDownloadPath = tempPath + L"deepsleep-v3\\math-msvc-v142\\lifeCycleSheet.xml";
+            
+            HRESULT successed = DownloadFileSimplified(L"https://github.com/deepsleep-v3/math-msvc/raw/refs/heads/main/docs/lifeCycleSheet.xml", actualDownloadPath);
+            if (!SUCCEEDED(successed)) {
+                cout << "Download failed. if continue, then maybe lead to XML loading fail. so, if you press \"Enter\", we will stop \"Check update\". " << endl;
+                cin >> _;
+            }
+            xml_document lifeCycleSheet;
+            xml_parse_result result = lifeCycleSheet.load_file(actualDownloadPath.c_str());
+            if (!result){
+                cerr << L"Life Cycle XML loading fail: " << result.description();
+            }
+        }
     }
 }
 #endif

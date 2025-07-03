@@ -3,12 +3,12 @@
 #ifndef DEEPSLEEPV3_ADVANCED_MATH_HEADER
 #define DEEPSLEEPV3_ADVANCED_MATH_HEADER
 #define DLLEXPORT __declspec(dllexport)
-#define CURRENT_VERSION "0.1.0.0"
+#define CURRENT_VERSION "0.2.0.0"
 #include <cstdint>
 #include <stdexcept>
 #include <iostream>
 #include <vector>
-#include "pugixml.hpp"
+#include "packages/pugixml.1.13.0/build/native/include/pugixml.hpp"
 #include "download_api.hpp"
 using namespace std;
 using namespace pugi;
@@ -109,12 +109,40 @@ namespace math
     }
 
     namespace update_tools {
+        class StatusOfCheckUpdate
+        {
+        public:
+            bool m_failed = false;
+            string m_description = "";
+            CheckUpdateResultType m_type = CheckUpdateResultType::CURRENT_IS_NEWEST;
+
+            StatusOfCheckUpdate(bool failed, string description, CheckUpdateResultType type) {
+                m_failed = failed;
+                m_description = description;
+                m_type = type;
+            }
+
+            ~StatusOfCheckUpdate() {}
+
+        private:
+
+        };
+
+        enum class CheckUpdateResultType : uint8_t
+        {
+            UNKNOWN,
+            CURRENT_IS_NEWEST,
+            HAVE_NEW_VERSION,
+            LIFE_CYCLE_XML_DOWNLOAD_FAILED,
+            LIFE_CYCLE_XML_LOADING_FAILED,
+        };
+
         /**
         * @brief 檢查是否為最新版本。
         * @return 當前版本是否為最新版本。
         * @author deepsleep-v3
         */
-        DLLEXPORT bool check_update() {
+        DLLEXPORT StatusOfCheckUpdate check_update() {
             string _ = "";
             cout << "Checking update…" << endl;
             wchar_t buffer[MAX_PATH];
@@ -124,14 +152,26 @@ namespace math
             
             HRESULT successed = DownloadFileSimplified(L"https://github.com/deepsleep-v3/math-msvc/raw/refs/heads/main/docs/lifeCycleSheet.xml", actualDownloadPath);
             if (!SUCCEEDED(successed)) {
-                cout << "Download failed. if continue, then maybe lead to XML loading fail. so, if you press \"Enter\", we will stop \"Check update\". " << endl;
+                cerr << "Download failed. if continue, then maybe lead to XML loading fail. so, if you press \"Enter\", we will stop \"Check update\". " << endl;
                 cin >> _;
+                return StatusOfCheckUpdate(true, "Download failed. ", CheckUpdateResultType::LIFE_CYCLE_XML_DOWNLOAD_FAILED);
             }
             xml_document lifeCycleSheet;
             xml_parse_result result = lifeCycleSheet.load_file(actualDownloadPath.c_str());
             if (!result){
-                cerr << L"Life Cycle XML loading fail: " << result.description();
+                cerr << "Life Cycle XML loading fail: " << result.description();
+                return StatusOfCheckUpdate(true, result.description(), CheckUpdateResultType::LIFE_CYCLE_XML_LOADING_FAILED);
             }
+            pugi::xml_node root = lifeCycleSheet.child("versions");
+            pugi::xml_node latestVersionNode = root.child("latest-version");
+            string latest = latestVersionNode.value();
+            if (latest == CURRENT_VERSION) {
+                return StatusOfCheckUpdate(false, "Current is newest version! ", CheckUpdateResultType::CURRENT_IS_NEWEST);
+            }
+            else {
+                return StatusOfCheckUpdate(false, "Have a new version! ", CheckUpdateResultType::HAVE_NEW_VERSION);
+            }
+            return StatusOfCheckUpdate(false, "???", CheckUpdateResultType::UNKNOWN);
         }
     }
 }

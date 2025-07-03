@@ -33,6 +33,12 @@
     <ClInclude Include="download_api.hpp">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="packages\pugixml.1.13.0\build\native\include\pugiconfig.hpp">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\pugixml.1.13.0\build\native\include\pugixml.hpp">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -44,8 +50,12 @@
     <ClCompile Include="pugixml.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="packages\pugixml.1.13.0\build\native\include\pugixml.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Doxyfile" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
